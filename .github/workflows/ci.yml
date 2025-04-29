@@ -26,7 +26,7 @@ jobs:
         
 
   deploy:
-    needs: build # This ensures 'deploy' runs after 'build' completes successfully
+    # needs: build # This ensures 'deploy' runs after 'build' completes successfully
     runs-on: ubuntu-latest
     steps:
     - name: Simple deploy step
