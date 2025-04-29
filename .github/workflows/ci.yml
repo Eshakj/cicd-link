@@ -31,3 +31,10 @@ jobs:
       run: echo "Starting the deployment process..."
     - name: Another simple deploy step
       run: echo "Deployment complete!"
+
+  notify:
+    needs: deploy # This ensures 'notify' runs after 'deploy' completes successfully
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification
+        run: echo "Deployment to production (or wherever!) has finished."
