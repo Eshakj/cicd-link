@@ -24,7 +24,7 @@ jobs:
         python -m unittest test_app.py
 
   deploy:
-    needs: build # This refers to the job named 'build'
+    needs: build 
     runs-on: ubuntu-latest
     steps:
     - name: Simple deploy step
@@ -33,8 +33,8 @@ jobs:
       run: echo "Deployment complete!"
 
   notify:
-    needs: deploy # This ensures 'notify' runs after 'deploy' completes successfully
+    needs: deploy # This ensures 'notify' runs after deploy completes successfully
     runs-on: ubuntu-latest
     steps:
       - name: Send notification
-        run: echo "Deployment to production (or wherever!) has finished."
+        run: echo "Deployment to production has finished."
